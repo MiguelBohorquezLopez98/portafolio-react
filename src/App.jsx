@@ -1,23 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import Nav from './components/Nav'
-import { Restaurants } from './components/Restaurants'
-
+import './App.css';
+import Home from './pages/Home';
+import Nav from './components/Nav';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-
   return (
     <>
-    <header>
-      <Nav />
-    </header>
-    <main>
-      <Restaurants/>
-    </main>
-    <footer>
-
-    </footer>
+      <header>
+        <Nav />
+      </header>
+      <main>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </main>
+      <footer>
+      </footer>
     </>
-  )
+  );
 }
-export default App
+
+export default App;
